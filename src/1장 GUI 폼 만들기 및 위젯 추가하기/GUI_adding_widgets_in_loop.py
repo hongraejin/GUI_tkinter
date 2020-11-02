@@ -58,7 +58,7 @@ colors = ['Blue',"Gold","Red"]
 
 # 라디오 버튼이 눌릴때마다 호출될 callback 함수
 def radCall():
-    win.configure(background=colors[radVar.get()])
+    action.configure(background=colors[radVar.get()])
 
 # 라디오 버튼에 활용할 정수 변수를 선언한다.
 radVar = tk.IntVar()
