@@ -6,13 +6,24 @@ from tkinter import Menu
 win = tk.Tk()
 win.title("Ray GUI")
 
+def _quit():
+    win.quit()
+    win.destroy()
+    exit()
+
 menu_bar = Menu(win)
 win.config(menu=menu_bar)
 file_menu = Menu(menu_bar)
-# file_menu.add_command(label="New")
-# file_menu.add_separator()
-# file_menu.add_command(label='Exit')
+file_menu.add_command(label="New")
+file_menu.add_separator()
+file_menu.add_command(label='Exit', command=_quit)
 menu_bar.add_cascade(label='File', menu=file_menu)
+
+help_menu = Menu(menu_bar,tearoff=0)
+menu_bar.add_cascade(label='Help', menu=help_menu)
+help_menu.add_command(label='About')
+
+
 
 mighty = ttk.LabelFrame(win, text='mighty frame')
 mighty.grid(column=0, row=0, padx=50, pady=40)
